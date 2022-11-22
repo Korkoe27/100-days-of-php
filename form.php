@@ -15,27 +15,32 @@
     }
 </style>
 
-<form action=""  method="GET"">
+<form action=""  method="POST"">
 
 <input type="text" name="user">
 <input type="password" name="passwrd" id="passw0rd">
 <input type="password" name="confrmpswrd" id=""">
-<button>SUBMIT</button>
+<button name="submit">SUBMIT</button>
 </form>
+
     <?php
-$userName = $_GET['user'] ;
-$password = $_GET['passwrd']; 
-$confirmPassword = $_GET['confrmpswrd'];
 
-    if ($password == $confirmPassword) {
+    $userName = $_POST['user'] ;
+    $password = $_POST['passwrd']; 
+    $confirmPassword = $_POST['confrmpswrd'];
 
-        echo "Hello, " . $userName . " . You're Welcome!";
+    // isset makes the following code display if and only if the user submits the inputs.
+if(isset($_POST["submit"])){
+    if ($password != $confirmPassword) {
+
+            echo "Your passwords do not match.";
+        
 
     } else {
         
-        echo "Your passwords do not match.";
+        echo "Hello, " . $userName . " . You're Welcome!";
     }
-    
+}
 
 ?>
 </body>
