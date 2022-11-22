@@ -8,14 +8,33 @@
 </head>
 <body>
 
-<form action=""  method="GET">
+<style>
+    input{
+        margin: 1rem 0;
+        display: block;
+    }
+</style>
+
+<form action=""  method="GET"">
 
 <input type="text" name="user">
-<Button>SUBMIT</Button>
+<input type="password" name="passwrd" id="passw0rd">
+<input type="password" name="confrmpswrd" id=""">
+<button>SUBMIT</button>
 </form>
     <?php
-$userName = $_GET['user'] ; 
-    echo "Hello, " . $userName . " . Welcome Back!";
+$userName = $_GET['user'] ;
+$password = $_GET['passwrd']; 
+$confirmPassword = $_GET['confrmpswrd'];
+
+    if ($password == $confirmPassword) {
+
+        echo "Hello, " . $userName . " . You're Welcome!";
+
+    } else {
+        
+        echo "Your passwords do not match.";
+    }
     
 
 ?>
