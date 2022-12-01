@@ -1,11 +1,20 @@
-p{
+/* p{
     text-align: center;
     font-size: 120px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 50vh;
     color: red;
-}
+} */
 
 /* body{
     background-color: black;
 } */
+
+input{
+    display: block;
+    /* margin: auto; */
+}
+
+body{
+    background-color: aliceblue;
+}
