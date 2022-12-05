@@ -55,7 +55,7 @@ $operator = $_POST['operator'];
                 echo $result1 . " minus " . $result2 . " equals:" . $result1 - $result2;
                 break;
             case "Multiply":
-                echo $result1 . " X " . $result2 . " equals:" .  $result1 * $result2;
+                echo $result1 . " multiplied by " . $result2 . " equals:" .  $result1 * $result2;
                 break;
             case "Divide":
                 echo $result1 . " divided by " . $result2 . " equals: " .  $result1 / $result2;

@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+
+<?php
+include 'header.php';
+?>    
+    <section>
+        <div class="someMainContent">
+            <h1>Hi there!</h1>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,26 +44,28 @@
 <button name="submit">SUBMIT</button>
 </form>
 
-    <?php
+    //<?php
 
-    $userName = $_POST['user'] ;
-    $password = $_POST['passwrd']; 
-    $confirmPassword = $_POST['confrmpswrd'];
+    //$userName = $_POST['user'] ;
+    //$password = $_POST['passwrd']; 
+    //$confirmPassword = $_POST['confrmpswrd'];
 
     // isset makes the following code display if and only if the user submits the inputs.
-if(isset($_POST["submit"])){
-    if ($password != $confirmPassword) {
+//if(isset($_POST["submit"])){
+    //if ($password != $confirmPassword) {
 
-            echo "Your passwords do not match.";
+        //    echo "Your passwords do not match.";
         
 
-    } else {
+   // } else {
         
-        echo "Hello, " . $userName . " . You're Welcome!";
-    }
-}
-?>
+      //  echo "Hello, " . $userName . " . You're Welcome!";
+  //  }
+//}
+//?>
 </body>
-</html>
+</html> -->
+
+
 
 
