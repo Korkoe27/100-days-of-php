@@ -1,3 +1,10 @@
+<?php
+    include_once 'includes/dbh.inc.php';
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,3 +25,20 @@
             </ul>
         </nav>
     </header>
+
+
+
+
+    <?php
+    $sql = "SELECT * FROM posts;";
+    $result = mysqli_query($conn, $sql);
+    $resultChecker = mysqli_num_rows($result);
+
+
+    if ($resultChecker > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo $row["subject"] . "<br>";
+        }
+    }
+    
+    ?>
