@@ -1,0 +1,21 @@
+li{
+    list-style-type: none;
+}
+
+/* .siteNav{
+    display: flex;
+} */
+
+
+
+.navLinks{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-content: space-between; */
+    padding: 1rem 0;
+}
+
+
+.pageLinks{
+    text-decoration: none;
+}
