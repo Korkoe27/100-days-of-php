@@ -13,7 +13,7 @@
     <header>
         <nav class="siteNav">
             <ul class="navLinks">
-                <li><a href="dashboard.php" class="pageLinks">About Us</a></li>
+                <li><a href="dashboard.php" class="pageLinks">Assign Rooms</a></li>
                 <li><a href="history.php" class="pageLinks">Reservations</a></li>
                 <li><a href="profile.php" class="pageLinks">Profile</a></li>
                 <li><a href="logIn.php" class="pageLinks">Log In</a></li>

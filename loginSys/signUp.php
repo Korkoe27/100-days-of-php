@@ -44,7 +44,7 @@
     </div>
     <div class="buttons">
         <button type="reset" class="signupButtons">Reset</button>
-        <button type="submit" name="signUp_button" name="submit" class="signupButtons">Sign Up</button>
+        <button type="submit" name="submit" class="signupButtons">Sign Up</button>
     </div>
 
 

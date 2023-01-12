@@ -1,8 +1,7 @@
 <?php
     include_once "./adminHeader.php";
-
 ?>
-
+ 
 
 <h2>Log In.</h2>
 

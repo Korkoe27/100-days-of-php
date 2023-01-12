@@ -1,24 +1,29 @@
 <?php
 
+ ini_set ('display_errors', 'on');
+ ini_set ('log_errors', 'on');
+ ini_set ('display_startup_errors', 'on');
+ ini_set ('error_reporting', E_ALL);
 
 
-if (isset($_POST["submit"])){
+
+if (1){
     $fName = $_POST["firstName"];
     $lName = $_POST["lastName"];
     $midName = $_POST["otherName"];
     $indexNum = $_POST["studentId"];
     $program = $_POST["programOfStudy"];
+    $telephone = $_POST["phoneNumber"];
     $gender = $_POST["user_gender"];
     $user_email = $_POST["student_email"];
     $dob = $_POST["dateOfBirth"];
     $first_password = $_POST["create_passwrd"];
     $second_password = $_POST["confirm_passwrd"];
-    $submit_button = $_POST["submit"];
 
 
 
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    include 'dbh.inc.php';
+    include 'functions.inc.php';
 
     if (emptyInputSignUp($fName, $lName, $indexNum, $program, $gender, $user_email, $dob, $first_password, $second_password) !==false) {
         header("location: ../signup.php?error=emptyinput");
@@ -32,15 +37,15 @@ if (isset($_POST["submit"])){
         header("location: ../signup.php?error=invalidStudId");
         exit();
     }
-    if (invalidName($fName, $lName, $midName) !==false) {
-        header("location: ../signup.php?error=namemustcontainonlyletters");
-        exit();
-    }
+    // if (invalidName($fName, $lName, $midName) !==false) {
+    //     header("location: ../signup.php?error=namemustcontainonlyletters");
+    //     exit();
+    // }
     if (passwordMatch($first_password, $second_password) !==false) {
         header("location: ../signup.php?error=passwordsdontmatch");
         exit();
     }
-    if (userAlreadyExists($conn, $indexNum, $user_email) !==false) {
+    if (userAlreadyExists($conn, $indexNum, $user_email, $telephone) !==false) {
         header("location: ../signup.php?error=useralreadyexists");
         exit();
     }
@@ -49,7 +54,7 @@ if (isset($_POST["submit"])){
         exit();
     }
 
-    createUser($conn, $fName, $lName, $indexNum, $program, $gender, $user_email, $dob, $first_password);
+    createUser($conn, $fName, $lName, $midName, $indexNum, $program, $telephone, $gender, $user_email, $dob, $first_password);
 
 } else {
     header("location: ../signup.php");
@@ -57,8 +62,8 @@ if (isset($_POST["submit"])){
 }
 
 
-if ($first_password == $second_password) {
-    $user_password = $second_password;
-} else {
-    echo "passwords do not match";
-}
+// if ($first_password == $second_password) {
+//     $user_password = $second_password;
+// } else {
+//     echo "passwords do not match";
+// }

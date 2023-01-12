@@ -7,7 +7,7 @@
 <section class="signup">
     <h2>Sign Up</h2>
 
-    <form action="./includesAdmin/adminSignup.inc.php" method="POST" class="login-form">
+    <form action="includesAdmin/adminSignup.inc.php" method="POST" class="login-form">
 
 
 
@@ -23,7 +23,7 @@
         <input type="password" name="confirm_passwrd" placeholder="Confirm Password" id="">
     </div>
     <div class="buttons">
-        <button type="submit" name="signUp_button" name="submit" class="signupButtons">Sign Up</button>
+        <button type="submit" name="submit" class="signupButtons">Sign Up</button>
     </div>
     </form>
 </section>

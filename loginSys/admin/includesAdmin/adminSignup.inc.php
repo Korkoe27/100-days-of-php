@@ -8,11 +8,12 @@ if (isset($_POST["submit"])){
     $adminPassword = $_POST["admin_passwrd"];
     $confirmPassword = $_POST["confrim_passwrd"];
 
-    require_once 'adminDbh.inc.php';
-    require_once 'adminFunctions.inc.php';
+    include 'adminDbh.inc.php';
+    include 'adminFunctions.inc.php';
 
     // error handlers to handle signup errors the admin can face when creating their account.
-
+    // print_r(emptyAdminSignUp($fName, $adminId, $adminEmail, $adminPassword, $confirmPassword));
+    // exit;
 
     if(emptyAdminSignUp($fName, $adminId, $adminEmail, $adminPassword, $confirmPassword) !==false){
         header("location: ../adminSignup.php?error=emptyinput");
@@ -39,7 +40,7 @@ if (isset($_POST["submit"])){
         exit();
     }
 
-    createAdmin($dbConn, $fName, $adminId, $adminEmail, $adminPassword);
+    createAdmin($dbConn, $fName,  $adminEmail, $adminId, $adminPassword);
 
 } else {
     header("location: ../adminSignup.php");

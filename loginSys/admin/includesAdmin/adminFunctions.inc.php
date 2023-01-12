@@ -1,14 +1,14 @@
 <?php
 
+
+
 function emptyAdminSignUp($fName, $adminId, $adminPassword, $confirmPassword){
-    
-    // $result;
 
     if (empty($fName) || empty($adminId) || empty($adminPassword) || empty($confirmPassword)){
         $result = true;
     }else{
 
-    $result = true;
+    $result = false;
     }
     return $result;
 
@@ -16,13 +16,15 @@ function emptyAdminSignUp($fName, $adminId, $adminPassword, $confirmPassword){
 
 function invalidAdminId($adminId){
     
-    // $result;
+
+    //this function checks and validates the admin ID to prevent them from using special characters. 
+    //Regular expressions gave the range for the values that validate the input.
 
     if (!preg_match("/^[a-zA-Z0-9]*$/", $adminId)){
         $result = true;
     }else{
 
-    $result = true;
+    $result = false;
     }
     return $result;
 
@@ -30,13 +32,14 @@ function invalidAdminId($adminId){
 
 function invalidAdminEmail($adminEmail){
     
-    // $result;
+
+    //This function validates the admin's email. the filter_var function checks that the email is accurate .
 
     if (!filter_var($adminEmail, FILTER_VALIDATE_EMAIL)){
         $result = true;
     }else{
 
-    $result = true;
+    $result = false;
     }
     return $result;
 
@@ -44,10 +47,9 @@ function invalidAdminEmail($adminEmail){
 
 function passwordMismatch($adminPassword, $confirmPassword){
     
-    // $result;
 
     if ($adminPassword !== $confirmPassword){
-        $result = true;
+        $result = false;
     }else{
 
     $result = true;
@@ -59,6 +61,8 @@ function passwordMismatch($adminPassword, $confirmPassword){
 function adminIdExists($dbConn, $adminEmail, $adminId){
     
     $sqlStatement = "SELECT * FROM admins WHERE adminId = ? OR adminEmail = ?;";
+
+    //this function determines if the admin is already in the system.
 
     $stmt = mysqli_stmt_init($dbConn);
 
@@ -88,9 +92,11 @@ function adminIdExists($dbConn, $adminEmail, $adminId){
     
 }
 
-function createAdmin($dbConn, $adminEmail, $adminId, $fName, $adminPassword){
+function createAdmin($dbConn, $fName, $adminEmail,  $adminId, $adminPassword){
     
     $sqlCreateStatement = "INSERT INTO admins (adminName, adminEmail, adminId, adminPassword) VALUES (?, ?, ?, ?);";
+
+    // this function takes all the values taken from the user and cretes the admin.
 
     $stmt = mysqli_stmt_init($dbConn);
 
