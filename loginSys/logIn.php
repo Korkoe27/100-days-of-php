@@ -6,11 +6,11 @@
 
 <h2>Log In.</h2>
 
-<form action="/includes/logIn.inc.php" method="post" class="login-form">
+<form action="/php-tuts/form/loginSys/includes/logIn.inc.php" method="post" class="login-form">
 
 <div class="login_details">
-    <input type="text" name="studentId" id="" class="student_Id" placeholder="Index Number/Email">
-    <input type="password" name="login_password" id="" class="login-password" placeholder="Password">
+    <input type="text" name="stud_email" required id="" class="student_Id" placeholder="Email">
+    <input type="password" name="login_password" required id="" class="login-password" placeholder="Password">
 </div>
     
 <div class="buttons">

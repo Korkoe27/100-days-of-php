@@ -1,5 +1,5 @@
 <?php
-
+//this line ini set codes display errors ecountered in this script. they are ignored if there are no errors
  ini_set ('display_errors', 'on');
  ini_set ('log_errors', 'on');
  ini_set ('display_startup_errors', 'on');
@@ -7,7 +7,7 @@
 
 
 
-if (1){
+if (isset($_POST["submit"])){
     $fName = $_POST["firstName"];
     $lName = $_POST["lastName"];
     $midName = $_POST["otherName"];
@@ -37,15 +37,11 @@ if (1){
         header("location: ../signup.php?error=invalidStudId");
         exit();
     }
-    // if (invalidName($fName, $lName, $midName) !==false) {
-    //     header("location: ../signup.php?error=namemustcontainonlyletters");
-    //     exit();
-    // }
     if (passwordMatch($first_password, $second_password) !==false) {
         header("location: ../signup.php?error=passwordsdontmatch");
         exit();
     }
-    if (userAlreadyExists($conn, $indexNum, $user_email, $telephone) !==false) {
+    if (userAlreadyExists($conn, $indexNum, $user_email) !==false) {
         header("location: ../signup.php?error=useralreadyexists");
         exit();
     }
@@ -60,10 +56,3 @@ if (1){
     header("location: ../signup.php");
     exit();
 }
-
-
-// if ($first_password == $second_password) {
-//     $user_password = $second_password;
-// } else {
-//     echo "passwords do not match";
-// }

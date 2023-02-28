@@ -16,8 +16,8 @@
                 <li><a href="dashboard.php" class="pageLinks">Dashboard</a></li>
                 <li><a href="history.php" class="pageLinks">Reservations</a></li>
                 <li><a href="profile.php" class="pageLinks">Profile</a></li>
-                <li><a href="/admin/adminSignUp.php" class="pageLinks">Log In</a></li>
-                <li><a href="/admin/adminLogin.php" class="pageLinks">Sign Up</a></li>
+                <li><a href="/logIn.php" class="pageLinks">Log In</a></li>
+                <li><a href="/signUp.php" class="pageLinks">Sign Up</a></li>
             </ul>
         </nav>
     </header>

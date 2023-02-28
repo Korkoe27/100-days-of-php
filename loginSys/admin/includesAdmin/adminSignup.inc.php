@@ -42,6 +42,8 @@ if (isset($_POST["submit"])){
 
     createAdmin($dbConn, $fName,  $adminEmail, $adminId, $adminPassword);
 
+    loginAdmin($dbConn, $adminEmail, $adminPassword);
+
 } else {
     header("location: ../adminSignup.php");
 }

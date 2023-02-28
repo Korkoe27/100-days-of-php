@@ -50,7 +50,41 @@
 
 
     </form>
+    <?php
+        if (isset($_GET["error"])){
+
+            if ($_GET["error"] == "emptyinput"){
+            echo "<p>You have left some required fields empty</p>";
+        }
+        if ($_GET["error"] == "invalidEmail"){
+            echo "<p>Your email is invalid.</p>";
+        }
+        if ($_GET["error"] == "invalidStudId"){
+            echo "<p>Your username is invalid. Input only numbers and alphabets.</p>";
+        }
+        if ($_GET["error"] == "passwordsdontmatch"){
+            echo "<p>The passwords do not match. try again.</p>";
+        }
+        if ($_GET["error"] == "useralreadyexists"){
+            echo "<p>This user already exists.</p>";
+        }
+        if ($_GET["error"] == "weakpassword"){
+            echo "<p>The password is weak. Use uppercase, lowercase and special characters. Your password should not be less than 8 values.</p>";
+        }
+        if ($_GET["error"] == "stmtfailed"){
+            echo "<p>This user already exists.</p>";
+        }
+        if ($_GET["error"] == "signupfailed"){
+            echo "<p>Something went wrong, try again!</p>";
+        }
+        if ($_GET["error"] == "signupsuccess"){
+            echo "<p>Account created successfully. Welcome!</p>";
+        }
+    }
+    ?>
+    
 </section>
+<aside class="background"></aside>
 
 
 <?php

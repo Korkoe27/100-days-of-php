@@ -3,6 +3,7 @@
 
 
 function emptyAdminSignUp($fName, $adminId, $adminPassword, $confirmPassword){
+    //this functions checks for empty inputs in the sign up process
 
     if (empty($fName) || empty($adminId) || empty($adminPassword) || empty($confirmPassword)){
         $result = true;
@@ -58,7 +59,7 @@ function passwordMismatch($adminPassword, $confirmPassword){
 
 }
 
-function adminIdExists($dbConn, $adminEmail, $adminId){
+function adminIdExists($dbConn, $adminEmail=null, $adminId=null){
     
     $sqlStatement = "SELECT * FROM admins WHERE adminId = ? OR adminEmail = ?;";
 
@@ -114,5 +115,10 @@ function createAdmin($dbConn, $fName, $adminEmail,  $adminId, $adminPassword){
     header("location: ../adminSignup.php?error=none");
         exit();
     
+
+}
+
+
+function loginAdmin($dbConn, $adminEmail, $adminPassword){
 
 }

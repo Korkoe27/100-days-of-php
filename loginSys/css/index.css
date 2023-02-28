@@ -6,7 +6,16 @@ li{
     display: flex;
 } */
 
-
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="password"],
+input[type="email"],
+button,
+select{
+    height: 2rem;
+    border-radius: 10px;
+}
 
 .navLinks{
     display: flex;
@@ -15,7 +24,22 @@ li{
     padding: 1rem 0;
 }
 
+/* select{
+    height: 2rem;
+}
 
 .pageLinks{
     text-decoration: none;
 }
+
+.signup{
+    margin: 0 15rem;
+    margin-top: 15rem;
+    background-color: #E1E5F2;
+    padding: 1rem;
+}
+
+
+.background{
+    background-image: url('../images/student_login.svg');
+} */
