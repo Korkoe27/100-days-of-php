@@ -11,10 +11,11 @@ function stringReverse(string $userStr){
     
 
    //in this for loop, i is instatiated at the end of the string. And until the position i is equal to zero, the position of i will keep decreasing by 1.
+   $reversedStr = "";
     for($i = ($stringLength-1); $i >= 0; $i--){
-        echo $userStr[$i];
+        $reversedStr .= $userStr[$i];
     }
-    echo "<br>";
+    return $reversedStr;
 }
 stringReverse("hello there");
 
