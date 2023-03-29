@@ -4,7 +4,24 @@
 
 
 function integerRev(int $integer){
-    if($integer>0){
-        
+
+    $absValue = strval(abs($integer));
+    $intLength = strlen($absValue);
+
+    $reversedInt = "";
+
+        for($i = ($intLength - 1); $i >= 0; $i--){
+            $reversedInt .=$absValue[$i];
+        }
+
+    if($integer<0){
+        echo "-" . $reversedInt;
+    } else{
+            echo $reversedInt;
     }
+
+
+
 }
+
+integerRev("827349");
