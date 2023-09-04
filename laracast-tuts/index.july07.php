@@ -32,20 +32,36 @@
                  'age' => '18',
                  'gender' => 'male',
                  'link' => 'https://www.example.com'
-            ]
+            ],
+                ['name' => 'Ernest',
+                'age' => '18',
+                'gender' => 'male',
+                'link' => 'https://www.example.com'
+            ],
+            ['name' => 'Tina',
+            'age' => '19',
+            'gender' => 'male',
+            'link' => 'https://www.example.com'
+        ],
+        ['name' => 'Joshua',
+        'age' => '20',
+        'gender' => 'male',
+        'link' => 'https://www.example.com'
+        ]
             );
 
 
         ?>
 
-        <!-- this foreach loop program loops through the associative array, studentData and is display their names with a link attached.  -->
 
         <?php foreach($studentsData as $data): ;?>
+        <?php if ($data["age"] === "18") : ?>
             <li>
                 <a href="<?= $data["link"]?>">
                     <?= $data['name']; ?>
                 </a>    
             </li>
+        <?php endif; ?>
         <?php endforeach; ?>
 </body>
 </html>
