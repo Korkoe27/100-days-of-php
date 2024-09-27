@@ -30,7 +30,7 @@ if(isset($_GET['submit'])){
     $b =$_GET['b'];
 }
 
-function checkNum($a,$b){
+function checkNum($a,$b): int{
 
 
     $sum = $a + $b;
